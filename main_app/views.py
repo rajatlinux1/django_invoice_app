@@ -14,17 +14,20 @@ class Home(View):
         return render(request, "main_app/index.html")
 
     def post(self, request):
-        form_id = request.POST.get("form_type")
-        name=''
-
         email = request.POST.get("email")
         password = request.POST.get("password")
-        if form_id:
-            name = request.POST.get("name")
+        name = request.POST.get("name", None)
+        if name:
             try:
                 user_obj = User.objects.create(full_name = name, email = email)
                 user_obj.set_password(password)
                 user_obj.save()
+                messages.add_message(
+                    request,
+                    messages.SUCCESS,
+                    "Registered Successfully",
+                    extra_tags="success",
+                )
 
             except IntegrityError:
                 messages.add_message(
@@ -33,13 +36,7 @@ class Home(View):
                     "You're already registered",
                     extra_tags="danger",
                 )
-            else:
-                messages.add_message(
-                    request,
-                    messages.SUCCESS,
-                    "Registered Successfully",
-                    extra_tags="success",
-                )
+                
         else:
             try:
                 user_obj = User.objects.get(email = email)
