@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Lock Screen</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css?family=Heebo:300" rel="stylesheet">
+
+<link rel="stylesheet" href="{% static 'css/locksreen-style.css' %}">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<nav class='tbar'>
+  <span class='percent'>70%</span>
+  <i class="fas fa-battery-three-quarters">
+  </i>
+  <i class="fas fa-wifi"></i>
+  <span class=time>7:21 PM</span>
+</nav>
+
+<div class='content'>
+  <div class='input-wrap'>
+    <div class='pic'></div>
+    <div class='wrap'>
+      <h3 class='name'>Andrew</h3>
+    </div>
+    <input type='password' id='password' placeholder='Enter Password' autocomplete='off'>
+    <button class='arrow'><i class="fas fa-arrow-right"></i>
+    </button>
+  </div>
+  <div class='cancel-wrap'>
+    <button class='x'>X</button>
+    <span>Cancel</span>
+  </div>
+</div>
+
+<div class='chrome'>
+ 
+  <nav class='toolbar'>
+    <div>
+      <i class="fas fa-circle" id='red'></i>
+      <i class="fas fa-circle" id='yellow'></i>
+      <i class="fas fa-circle" id='green'></i>
+    </div>
+    <div class='tab'><i class="fas fa-lock"></i> Security <span class='close'>x</span></div>
+  </nav>
+  
+  <div class='bar'>
+    <div class='pointers'>
+      <i class="fas fa-arrow-left"></i>
+      <i class="fas fa-arrow-right"></i>
+      <i class="fas fa-redo-alt"></i>
+    </div>
+    <span class='search'>examplepasswordsecurity.com</span>
+  </div>
+  <main>
+    <h2 class='articleh2'>Secure Passwords</h2>
+    <div class='words'>
+    <p>Secure Passwords are key to ensure your computer, accounts, and identity are secure. Here are some rules to ensure your password is secure!</p>
+    <ol class='rules'>
+      <li>Use a different password for each account</li> 
+      <li>Use a password manager to keep track of your passwords</li>  
+      <li>Dont leave passwords on stickie notes etc.</li>  
+      <li>Dont use "password", "1234", or any placeholder or obvious passwords</li>  
+      <li>Use a variety of characters in your password</li>  
+     </ol>
+    </div>
+  </main>
+</div>
+<!-- partial -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js'></script>
+<script  src="{% static 'js/locksreen-script.js' %}"></script>
+
+
+</body>
+</html>

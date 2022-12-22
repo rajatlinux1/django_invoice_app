@@ -11,7 +11,7 @@ class Home(View):
     def get(self, request):
         if request.user.is_authenticated:
             return redirect("profile")
-        return render(request, "main_app/index.html")
+        return render(request, "main_app/auth-login.html")
 
     def post(self, request):
         email = request.POST.get("email")
@@ -68,3 +68,7 @@ class Home(View):
 class Profile(View):
     def get(self, request):
         return HttpResponse("Profile")
+    
+class LockScreen(View):
+    def get(self, request):
+        return render(request, "main_app/locksreen.html")
